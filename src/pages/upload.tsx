@@ -69,16 +69,13 @@ export default function Upload() {
                * Add useUniqueFileName to true
                * Add customMetadata to include Title and Description
                * Add folder to /YoutubeClone
-               * Add onUploadProgress to setProgress
-               * Add onUploadStart to onUploading
-               * Add onSuccess to onUploaded, alert "Video uploaded successfully!" and router.push to /
                */
             }
             {
               /**
                * TODO:
                * For ABS,
-               * add post transformation
+               * add post transformation prop
                * {{ post: [{ type: "abs", protocol: "hls", value: "sr-240_360_480_720_1080" }] }}
                */
             }
@@ -87,16 +84,25 @@ export default function Upload() {
               hidden
               accept="video/*"
               ref={uploadRef}
+              onUploadStart={() => {
+                onUploading();
+              }}
+              onUploadProgress={setProgress}
+              onSuccess={() => {
+                onUploaded();
+                alert("Video uploaded successfully!");
+                router.push("/");
+              }}
             /> */}
 
-            {/* <SubmitButton isLoading={isUploading} loadingText="Uploading...">
+            <SubmitButton isLoading={isUploading} loadingText="Uploading...">
               Select File and Upload
             </SubmitButton>
             {progress ? (
               <Progress
                 value={progress ? (progress.loaded / progress.total) * 100 : 0}
               />
-            ) : null} */}
+            ) : null}
           </FormLayout>
         )}
       </Form>

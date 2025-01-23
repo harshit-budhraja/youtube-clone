@@ -20,6 +20,13 @@ export default function Home() {
     // Implement loadVideos here
     // Fetch from /api/imagekit/list
     // Set videos state with data if response is ok
+    
+    // const response = await fetch("/api/imagekit/list");
+
+    // if (response.ok) {
+    //   const data = await response.json();
+    //   setVideos(data);
+    // }
   };
 
   useEffect(() => {
