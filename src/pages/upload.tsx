@@ -10,9 +10,9 @@ import { IKUpload } from "imagekitio-next";
 import { useRouter } from "next/router";
 import { useRef, useState } from "react";
 
-const UploadField = createField(IKUpload, {
-  isControlled: true,
-});
+// const UploadField = createField(IKUpload, {
+//   isControlled: true,
+// });
 
 export default function Upload() {
   const [progress, setProgress] =
