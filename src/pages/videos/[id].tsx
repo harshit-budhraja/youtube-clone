@@ -145,22 +145,15 @@ export default function Video({ notFound, file }: VideoProps) {
 }
 
 export const getServerSideProps = (async (context) => {
-  const file = await fetch(
-    `http://${context.req.headers["host"]}/api/imagekit/details?id=${
-      context.params!.id
-    }`
-  );
-
-  if (!file.ok) {
-    return {
-      notFound: true,
-    };
-  }
+  // TODO:
+  // Implement getServerSideProps here
+  // Fetch from /api/imagekit/details?id
+  // id is context.params!.id
+  // Set file state with data if response is ok
+  // { props: { notFound: false, file: <response_json> } }
+  // If !file.ok, return { notFound: true }
 
   return {
-    props: {
-      notFound: false,
-      file: await file.json(),
-    },
+    notFound: true,
   };
 }) satisfies GetServerSideProps<VideoProps>;

@@ -15,11 +15,10 @@ export default async function handler(
 
   const fileId = body.data.fileId;
 
-  await imagekit.updateFileDetails(fileId, {
-    customMetadata: {
-        AbsReady: true
-    }
-  })
+  // TODO:
+  // Implement webhook here
+  // Whenever the webhook is received, update the file details with AbsReady: true
+  // imagekit.updateFileDetails(fileId, { customMetadata: { AbsReady: true } })
 
   res.status(200).json({ success: true });
 }

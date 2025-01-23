@@ -16,12 +16,10 @@ export default function Home() {
   const [videos, setVideos] = useState<any[]>([]);
 
   const loadVideos = async () => {
-    const response = await fetch("/api/imagekit/list");
-
-    if (response.ok) {
-      const data = await response.json();
-      setVideos(data);
-    }
+    // TODO:
+    // Implement loadVideos here
+    // Fetch from /api/imagekit/list
+    // Set videos state with data if response is ok
   };
 
   useEffect(() => {

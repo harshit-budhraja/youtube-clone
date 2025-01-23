@@ -11,24 +11,12 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const files = await imagekit.listFiles({
-    path: "/YoutubeClone",
-    sort: "DESC_CREATED"
-  });
+  // imagekit.listFiles
+  // path: "/YoutubeClone",
+  // sort: "DESC_CREATED"
 
-  res.status(200).json(
-    files.map((file) => ({
-      id: file.fileId,
-      thumbnailUrl: imagekit.url({
-        path: `${file.filePath}/ik-thumbnail.jpg`,
-        queryParameters: {
-          updatedAt: new Date(file.updatedAt).getTime().toString(),
-        },
-      }),
-      title: file.customMetadata?.Title ?? file.name,
-      description: file.customMetadata?.Description ?? file.name,
-      duration: (file as any).duration ?? 0,
-      createdAt: file.createdAt,
-    }))
-  );
+  // To send object containing: id, thumbnailUrl using imagekit.url(path/ik-thumbnail.jpg)
+  // and queryParameters: { updatedAt: new Date(file.updatedAt).getTime().toString() }
+  // url, title, description, duration, createdAt
+  res.status(200).json([]);
 }
