@@ -84,12 +84,12 @@ export const VideoPreview = ({
           flex={orientation === "vertical" ? "1" : "4"}
         >
           {orientation === "vertical" ? (
-            <Avatar name="Abhinav Dhiman" size="xs" />
+            <Avatar name="Harshit Budhraja" size="xs" />
           ) : null}
           <Stack spacing="0.5">
             <Heading fontSize="1.2rem">{title.replace(".mp4", "")}</Heading>
             <Text color="muted" fontSize="sm">
-              Abhinav Dhiman
+              Harshit Budhraja
             </Text>
             <Text color="muted" fontSize="sm">
               <relative-time

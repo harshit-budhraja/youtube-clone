@@ -134,7 +134,7 @@ export default function App({ Component, pageProps }: AppProps) {
                   size="md"
                   href="/upload"
                 />
-                <Avatar name="Abhinav Dhiman" size="sm" />
+                <Avatar name="Harshit Budhraja" size="sm" />
               </Navbar>
             }
             sidebar={

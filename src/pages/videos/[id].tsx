@@ -92,10 +92,10 @@ export default function Video({ notFound, file }: VideoProps) {
           </Heading>
           <HStack gap="4">
             <HStack>
-              <Avatar name="Abhinav Dhiman" />
+              <Avatar name="Harshit Budhraja" />
               <VStack alignItems="flex-start" gap="0">
                 <Text size="sm" fontWeight="bold">
-                  Abhinav Dhiman
+                  Harshit Budhraja
                 </Text>
                 <Text size="xs">10k subscribers</Text>
               </VStack>

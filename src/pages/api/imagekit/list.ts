@@ -12,7 +12,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const files = await imagekit.listFiles({
-    path: "/CityJSVideos",
+    path: "/YoutubeClone",
     sort: "DESC_CREATED"
   });
 
