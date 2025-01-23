@@ -73,7 +73,7 @@ export default function Upload() {
                 Title: form.getValues().title,
                 Description: form.getValues().description,
               }}
-              folder="/CityJSVideos"
+              folder="/YoutubeClone"
               onUploadProgress={setProgress}
               onUploadStart={() => {
                 onUploading();

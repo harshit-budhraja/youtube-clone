@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "concurrently \"next dev --turbopack\" \"ngrok http 3000 --domain=rapidly-amazing-hare.ngrok-free.app\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -31,6 +31,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "concurrently": "^9.1.2",
     "eslint": "^8",
     "eslint-config-next": "15.0.3",
     "typescript": "^5"
