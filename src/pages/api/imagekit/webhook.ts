@@ -20,5 +20,9 @@ export default async function handler(
   // Whenever the webhook is received, update the file details with AbsReady: true
   // imagekit.updateFileDetails(fileId, { customMetadata: { AbsReady: true } })
 
+  // if (body.type === "upload.post-transform.success" && fileId) {
+  //   await imagekit.updateFileDetails(fileId, { customMetadata: { AbsReady: true } })
+  // }
+
   res.status(200).json({ success: true });
 }
