@@ -15,4 +15,13 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
    * 
    * send token, expire, signature in response object
    */
+  // const imagekit = new ImageKit({
+  //   publicKey,
+  //   privateKey,
+  //   urlEndpoint,
+  // });
+
+  // const { token, expire, signature } = imagekit.getAuthenticationParameters();
+
+  // return res.status(200).json({ token, expire, signature });
 }
