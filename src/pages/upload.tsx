@@ -6,13 +6,13 @@ import {
   FormLayout,
   SubmitButton,
 } from "@saas-ui/react";
-import { IKUpload } from "imagekitio-next";
+import { IKUpload as IKUploadComponent } from "imagekitio-next";
 import { useRouter } from "next/router";
 import { useRef, useState } from "react";
 
-// const UploadField = createField(IKUpload, {
-//   isControlled: true,
-// });
+const IKUpload = createField(IKUploadComponent, {
+  isControlled: true,
+});
 
 export default function Upload() {
   const [progress, setProgress] =
@@ -69,21 +69,23 @@ export default function Upload() {
                * Add useUniqueFileName to true
                * Add customMetadata to include Title and Description
                * Add folder to /YoutubeClone
-               */
-            }
-            {
-              /**
-               * TODO:
+               * 
                * For ABS,
                * add post transformation prop
                * {{ post: [{ type: "abs", protocol: "hls", value: "sr-240_360_480_720_1080" }] }}
                */
             }
-            {/* <UploadField
+            {/* <IKUpload
               name="file"
               hidden
               accept="video/*"
               ref={uploadRef}
+              // useUniqueFileName={true}
+              // folder="/YoutubeClone"
+              // customMetadata={{
+              //   Title: form.getValues().title,
+              //   Description: form.getValues().description,
+              // }}
               onUploadStart={() => {
                 onUploading();
               }}
@@ -93,11 +95,14 @@ export default function Upload() {
                 alert("Video uploaded successfully!");
                 router.push("/");
               }}
+              // transformation={{
+              //   post: [{ type: "abs", protocol: "hls", value: "sr-240_360_480_720_1080" }]
+              // }}
             /> */}
 
-            <SubmitButton isLoading={isUploading} loadingText="Uploading...">
+            {/* <SubmitButton isLoading={isUploading} loadingText="Uploading...">
               Select File and Upload
-            </SubmitButton>
+            </SubmitButton> */}
             {progress ? (
               <Progress
                 value={progress ? (progress.loaded / progress.total) * 100 : 0}

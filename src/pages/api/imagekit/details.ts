@@ -18,17 +18,22 @@ export default async function handler(
   }
 
   const file = await imagekit.getFileDetails(fileId);
-
-  // Implement ABS here
-  // If ABS is ready (customMetadata?.AbsReady), url is path/ik-master.m3u8
-  // and transformation: [{ "sr": "240_360_480_720_1080" }]
-
-  const url: string = imagekit.url({
+  let url : string = imagekit.url({
     path: file.filePath,
     queryParameters: {
       updatedAt: new Date(file.updatedAt).getTime().toString(),
     },
   })
+
+  // Implement ABS here
+  // if (file.customMetadata?.AbsReady) {
+  //   url = imagekit.url({
+  //     path: `${file.filePath}/ik-master.m3u8`,
+  //     transformation: [{
+  //       "sr": "240_360_480_720_1080"
+  //     }],
+  //   })
+  // }
 
   res.status(200).json({
     id: file.fileId,
